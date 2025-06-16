@@ -1,21 +1,65 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import { supabase } from '@/lib/supabase'
+import { User } from '@supabase/supabase-js'
+import AuthForm from '@/components/AuthForm'
+import Dashboard from '@/components/Dashboard'
+
 export default function Home() {
+  const [user, setUser] = useState<User | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [authMode, setAuthMode] = useState<'login' | 'signup'>('login')
+
+  useEffect(() => {
+    // Get initial session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null)
+      setLoading(false)
+    })
+
+    // Listen for auth changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+      setLoading(false)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
+
+  if (loading) {
+    return (
+      <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </main>
+    )
+  }
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-8">
-      <div className="max-w-2xl mx-auto text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">
-          Welcome to Bolt Hackathon
-        </h1>
-        <p className="text-lg text-gray-600 mb-8">
-          Your Next.js application is now running successfully!
-        </p>
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">
-            Ready to build something amazing?
-          </h2>
-          <p className="text-gray-600">
-            Start editing <code className="bg-gray-100 px-2 py-1 rounded text-sm">app/page.tsx</code> to customize this page.
+      <div className="w-full max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Supabase Authentication
+          </h1>
+          <p className="text-lg text-gray-600">
+            {user ? 'Welcome back!' : 'Sign in or create an account to get started'}
           </p>
         </div>
+
+        {user ? (
+          <Dashboard user={user} />
+        ) : (
+          <AuthForm 
+            mode={authMode} 
+            onToggleMode={() => setAuthMode(authMode === 'login' ? 'signup' : 'login')} 
+          />
+        )}
       </div>
     </main>
   )
