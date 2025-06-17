@@ -133,7 +133,7 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
             disabled={loading}
             className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-medium py-2 px-4 rounded-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
-            {loading ? 'Loading...' : mode === 'login' ? 'Sign In' : 'Sign Up'}
+            {loading ? 'Loading...' : mode === 'login' ? 'Sign In' : 'Create Account'}
           </button>
         </form>
         
