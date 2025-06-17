@@ -51,7 +51,7 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
         <h2 className="text-2xl font-bold text-gray-800">
           Welcome back
         </h2>
-      <p className="font-semibold text-gray-500">Continue your therapy journey</p>
+      <p className="text-sm font-semibold text-gray-500">Continue your therapy journey</p>
       </div>
         ) : (
       <h2 className="text-2xl font-bold text-gray-800 mb-6">
