@@ -47,8 +47,8 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
       <div className="bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
         
         {mode == 'login' ? (
-      <div>
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-gray-800">
           Welcome back
         </h2>
       <p className="text-lg font-semibold text-gray-500">Continue your therapy journey</p>
