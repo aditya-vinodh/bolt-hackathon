@@ -45,9 +45,16 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
   return (
     <div className="w-full max-w-md mx-auto">
       <div className="bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          {mode === 'login' ? 'Welcome back' : 'Sign Up'}
+        
+        {mode == 'login' ? (
+      <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          Welcome back
         </h2>
+        ) : (
+      <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          New to AI therapy?
+        </h2>
+        )}
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
