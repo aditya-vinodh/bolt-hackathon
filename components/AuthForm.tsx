@@ -113,7 +113,7 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
         <div className="mt-6 text-center">
           <button
             onClick={onToggleMode}
-            className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+            className="text-indigo-600 hover:text-indigo-800 text-sm font-medium"
           >
             {mode === 'login' 
               ? "Don't have an account? Sign up" 
