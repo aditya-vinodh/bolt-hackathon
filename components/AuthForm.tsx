@@ -55,7 +55,7 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
       </div>
         ) : (
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-800">
+        <h2 className="text-2xl text-center font-bold text-gray-800">
             New to AI therapy?
           </h2>
       <p className="text-sm text-center font-semibold text-gray-500">Create an account to start your journey</p>
