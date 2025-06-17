@@ -71,7 +71,7 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
               onChange={(e) => setEmail(e.target.value)}
               required
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-500"
-              placeholder="Enter your email"
+              placeholder="your@email.com"
             />
           </div>
           
