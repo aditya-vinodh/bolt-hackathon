@@ -48,14 +48,14 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
         
         {mode == 'login' ? (
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-800">
+        <h2 className="text-2xl font-bold text-gray-800 mb-1">
           Welcome back
         </h2>
       <p className="text-sm font-semibold text-gray-500">Continue your therapy journey</p>
       </div>
         ) : (
       <div className="mb-6">
-        <h2 className="text-2xl text-center font-bold text-gray-800">
+        <h2 className="text-2xl text-center font-bold text-gray-800 mb-1">
             New to AI therapy?
           </h2>
       <p className="text-sm text-center font-semibold text-gray-500">Create an account to start your journey</p>
