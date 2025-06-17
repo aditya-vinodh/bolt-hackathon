@@ -44,9 +44,6 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-8">
       <div className="w-full max-w-4xl mx-auto">
         <div className="text-center mb-8">
-          <p className="text-lg text-gray-600">
-            {user ? 'Welcome back!' : 'Sign in or create an account to get started'}
-          </p>
         </div>
 
         {user ? (
