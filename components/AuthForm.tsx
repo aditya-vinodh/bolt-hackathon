@@ -54,9 +54,12 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
       <p className="text-sm font-semibold text-gray-500">Continue your therapy journey</p>
       </div>
         ) : (
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          New to AI therapy?
-        </h2>
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-gray-800">
+            New to AI therapy?
+          </h2>
+      <p className="text-sm text-center font-semibold text-gray-500">Create an account to start your journey</p>
+      </div>
         )}
         
         <form onSubmit={handleSubmit} className="space-y-4">
