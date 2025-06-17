@@ -63,7 +63,7 @@ export default function AuthForm({ mode, onToggleMode }: AuthFormProps) {
         )}
         
         <form onSubmit={handleSubmit} className="space-y-4">
-          {mode == 'login' ? () : (
+          {mode == 'login' ? (<div></div>) : (
             <div className="grid grid-cols-2">
               <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">

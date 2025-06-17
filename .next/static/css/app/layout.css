@@ -602,6 +602,9 @@ video {
 .flex {
   display: flex;
 }
+.grid {
+  display: grid;
+}
 .h-12 {
   height: 3rem;
 }
@@ -631,6 +634,9 @@ video {
 }
 .animate-spin {
   animation: spin 1s linear infinite;
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .items-center {
   align-items: center;
